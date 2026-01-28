@@ -10,6 +10,43 @@ let currentQuestion = 0;
 let selectedPaese = null;
 let phase1Complete = false;
 
+// Paesaggi di background rotanti
+const landscapes = [
+  {
+    image: 'assets/img/montagna.jpg',
+    location: 'Montagna',
+    where: 'Paesaggio Montano'
+  },
+  {
+    image: 'assets/img/fiume.jpg',
+    location: 'Fiume',
+    where: 'Paesaggio Fluviale'
+  },
+  {
+    image: 'assets/img/lago.jpg',
+    location: 'Lago',
+    where: 'Paesaggio Lacustre'
+  },
+  {
+    image: 'assets/img/città.jpg',
+    location: 'Città',
+    where: 'Paesaggio Urbano'
+  },
+  {
+    image: 'assets/img/collina.jpg',
+    location: 'Collina',
+    where: 'Paesaggio Collinare'
+  },
+  {
+    image: 'assets/img/mare.jpg',
+    location: 'Mare',
+    where: 'Paesaggio Marino'
+  }
+];
+
+let currentLandscapeIndex = 0;
+let tooltipTimeout = null;
+
 const elements = {
     home: document.getElementById('home'),
     quizContainer: document.getElementById('quizContainer'),
@@ -29,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elements.nextBtn) elements.nextBtn.addEventListener('click', nextQuestion);
     if (elements.prevBtn) elements.prevBtn.addEventListener('click', prevQuestion);
     if (elements.restartBtn) elements.restartBtn.addEventListener('click', () => location.reload());
+    
+    // Inizializza il background carousel
+    initializeBackgroundCarousel();
     loadInitialData();
 });
 
@@ -40,6 +80,61 @@ async function loadInitialData() {
         console.log("Quiz caricato!");
     } catch (err) {
         console.error("Errore critico:", err);
+    }
+}
+
+function initializeBackgroundCarousel() {
+    const carousel = document.getElementById('backgroundCarousel');
+    if (!carousel) return;
+
+    // Carica l'immagine iniziale randomica
+    currentLandscapeIndex = Math.floor(Math.random() * landscapes.length);
+    loadBackgroundImage(currentLandscapeIndex);
+
+    // Gestisci il tooltip al passaggio del mouse
+    carousel.addEventListener('mouseenter', () => {
+        clearTimeout(tooltipTimeout);
+        tooltipTimeout = setTimeout(() => {
+            showLocationTooltip();
+        }, 2000);
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+        clearTimeout(tooltipTimeout);
+        hideLocationTooltip();
+    });
+}
+
+function loadBackgroundImage(index) {
+    const imageDiv = document.querySelector('.background-image');
+    if (imageDiv) {
+        imageDiv.style.backgroundImage = `url('${landscapes[index].image}')`;
+        imageDiv.dataset.location = landscapes[index].location;
+        imageDiv.dataset.where = landscapes[index].where;
+        imageDiv.classList.add('active');
+        
+        // Aggiorna il location-info permanente
+        const locationName = document.getElementById('locationName');
+        const locationWhere = document.getElementById('locationWhere');
+        if (locationName) locationName.textContent = landscapes[index].location;
+        if (locationWhere) locationWhere.textContent = landscapes[index].where;
+    }
+}
+
+function showLocationTooltip() {
+    const tooltip = document.querySelector('.location-tooltip');
+    if (tooltip) {
+        const location = landscapes[currentLandscapeIndex].location;
+        const where = landscapes[currentLandscapeIndex].where;
+        tooltip.innerHTML = `<strong>${location}</strong><br/>${where}`;
+        tooltip.style.opacity = '1';
+    }
+}
+
+function hideLocationTooltip() {
+    const tooltip = document.querySelector('.location-tooltip');
+    if (tooltip) {
+        tooltip.style.opacity = '0';
     }
 }
 
