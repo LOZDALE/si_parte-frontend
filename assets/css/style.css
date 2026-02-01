@@ -195,7 +195,7 @@ header {
 }
 
 .hero {
-  background: transparent;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.01) 80%, rgba(0, 0, 0, 0.02) 100%);
   color: white;
   padding: 0;
   text-align: center;
@@ -277,6 +277,18 @@ display: flex;
 .info {
   width: 100%;
   padding: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.01) 20%, rgba(255, 255, 255, 1) 70%);
+}
+
+.info-bottom {
+  background-color: rgba(255,255,255,1) !important;
+  color: #000;
+  margin-top: 0;
+  padding-top: 2.5rem;
+  padding-bottom: 2rem;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
 }
 
 .info .container {
@@ -287,8 +299,8 @@ display: flex;
   width: 100%;
   max-width: 100%;
   padding: 50px 2rem;
-  background-color: rgba(255, 255, 255, 1);
-  backdrop-filter: blur(10px);
+  background-color: transparent;
+  backdrop-filter: none;
   margin: 0;
 }
 
@@ -320,14 +332,30 @@ display: flex;
 }
 
 .quiz-section {
-  background-color: rgba(0, 0, 0, 0.3);
+  position: relative;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 35%, rgba(0,0,0,0.15) 70%, rgba(0,0,0,0.3) 100%);
   backdrop-filter: blur(10px);
   padding: 3rem 0;
   min-height: 60vh;
   margin-bottom: 0;
 }
 
+.quiz-section::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 220px;
+  /* fade down to pure white to match .info-bottom exactly */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .quiz-section .container {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
