@@ -28,7 +28,6 @@ const elements = {
     answersContainer: document.getElementById('answersContainer'),
     progressFill: document.getElementById('progressFill'),
     prevBtn: document.getElementById('prevBtn'),
-    nextBtn: document.getElementById('nextBtn'),
     restartBtn: document.getElementById('restartBtn'),
     startBtn: document.getElementById('startBtn'),
     contQuizBtn: document.getElementById('contQuizBtn')
@@ -36,7 +35,6 @@ const elements = {
 
 document.addEventListener('DOMContentLoaded', () => {
     if (elements.startBtn) elements.startBtn.addEventListener('click', startQuiz);
-    if (elements.nextBtn) elements.nextBtn.addEventListener('click', nextQuestion);
     if (elements.prevBtn) elements.prevBtn.addEventListener('click', prevQuestion);
     if (elements.restartBtn) elements.restartBtn.addEventListener('click', () => location.reload());
     if (elements.contQuizBtn) elements.contQuizBtn.addEventListener('click', continueQuiz);
@@ -97,14 +95,19 @@ function loadQuestion() {
             userAnswers[currentQuestion] = i;
             loadQuestion();
             // Auto-next after a short delay for better UX
-            setTimeout(nextQuestion, 300);
+            setTimeout(nextQuestion, 400);
         };
         elements.answersContainer.appendChild(div);
     });
 
-    elements.prevBtn.disabled = currentQuestion === 0;
-    elements.nextBtn.textContent = (currentQuestion === 2 && !phase1Complete) ? 'Scopri il Paese' :
-        (currentQuestion === quizData.length - 1 ? 'Vedi Risultato' : 'Prossima');
+    // Mostra il tasto "Indietro" solo dalla seconda domanda in poi
+    if (elements.prevBtn) {
+        if (currentQuestion === 0) {
+            elements.prevBtn.style.display = 'none';
+        } else {
+            elements.prevBtn.style.display = 'inline-block';
+        }
+    }
 }
 
 function prevQuestion() {
