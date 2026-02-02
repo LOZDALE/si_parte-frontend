@@ -481,3 +481,66 @@ footer p {
   text-align: center;
 }
 
+.about-us-container{
+  font-family: "Montserrat" Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #fff;
+    max-width: 800px;
+            margin: 0 auto;
+    max-width: 1000px;
+    margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            align-items: stretch;
+            padding: 20px;
+}
+
+.card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            flex: 1; /* Le card occupano lo stesso spazio */
+            min-width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #333;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #007bff; /* Colore personalizzabile */
+            border-radius: 2px;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1.05rem;
+            margin-top: 20px;
+        }
+
+        .mission-card h2::after {
+            background-color: #33c7a8;
+        }
