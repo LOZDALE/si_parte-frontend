@@ -170,15 +170,16 @@ header {
 }
 
 .btn-primary {
-  background-color: #1a1a1a;
+  text-decoration: none;
+  background-color: #007bff;
   color: white;
-  border: solid 2px #1a1a1a;
+  border: solid 2px #007bff;
 }
 
 .btn-primary:hover {
-  background-color: #333;
-  color: white;
-  border: solid 2px #333;
+  background-color: #fff;
+  color: #007bff;
+  border: solid 2px #007bff;
   transform: translateY(-2px);
 }
 
@@ -712,3 +713,10 @@ footer {
     width: 100%;
   }
 }
+
+.info .btn {
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+}
+
