@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-color: #007bff;
+  --primary-color: #7ed2ff;
   --primary-dark: #0056b3;
-  --secondary-color: #33c7a8;
+  --secondary-color: #7ed2ff;
   --accent-color: #2a91ff;
   --bg-dark: rgba(0, 0, 0, 0.8);
   --glass-bg: rgba(255, 255, 255, 0.1);
@@ -159,15 +159,15 @@ header {
 }
 
 .btn-cta-secondary {
-  background-color: #33c7a8;
+  background-color: #007bff;
   color: white;
-  border: solid 2px #33c7a8;
+  border: solid 2px #007bff;
 }
 
 .btn-cta-secondary:hover {
   background-color: #fff;
-  color: #33c7a8;
-  border: solid 2px #33c7a8;
+  color: #007bff;
+  border: solid 2px #007bff;
   transform: translateY(-2px);
 }
 
