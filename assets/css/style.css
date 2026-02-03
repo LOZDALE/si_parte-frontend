@@ -130,7 +130,7 @@ header {
   color: #007bff;
 }
 
-/* CTA buttons: hero, about, contact (blu/verde) */
+
 .btn-cta {
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
@@ -556,6 +556,59 @@ header {
   .footer-bottom {
     justify-content: flex-start;
   }
+
+  .about-section .container {
+    padding: 1.5rem;
+  }
+
+  .about-us-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-us-text,
+  .about-us-image {
+    flex: none;
+    width:300px;
+  }
+
+  .about-us-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-us-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .card {
+    min-width: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .card h2 {
+    font-size: 1.25rem;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+  }
+
+  .section-cta {
+    padding: 2.5rem 1.5rem;
+    min-height: 150px;
+  }
+
+  .page-header {
+    min-height: 300px;
+    padding: 3rem 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
 }
 
 .info .btn-cta {
@@ -564,7 +617,7 @@ header {
   text-align: center;
 }
 
-/* Intestazione pagina con sfondo colorato (about / contact) */
+
 .page-header {
   min-height: 420px;
   display: flex;
@@ -591,20 +644,50 @@ header {
   letter-spacing: 2px;
 }
 
+.about-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-card {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .about-us-container{
   font-family: "Montserrat" Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #fff;
-    max-width: 800px;
-            margin: 0 auto;
-    max-width: 1000px;
-    margin: 0 auto;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
-            align-items: stretch;
-            padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    padding: 0;
 }
+
+.about-us-text {
+  flex: 1;
+}
+
+.section-cta {
+  padding: 3rem 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.section-cta-mondo {
+  background-color: #007bff;
+  background-image: url('../img/MondoBianco.png');
+  background-size: 120% auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
 
 .card {
             background: white;
@@ -733,4 +816,102 @@ header {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media (max-width: 480px) {
+  .about-section .container {
+    padding: 1rem;
+  }
+
+  .about-us-container {
+    gap: 1.5rem;
+  }
+
+  .about-us-text h2 {
+    font-size: 1.25rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .section-cta {
+    padding: 2rem 1rem;
+  }
+
+  .page-header {
+    min-height: 250px;
+    padding: 2rem 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Layout generale della sezione */
+.about-content-flat {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+/* Titolo con linea (stile identico alle tue card) */
+.flat-title-styled {
+    color: #333;
+    letter-spacing: 5px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 2.5rem;
+    display: inline-block; /* Importante per centrare la linea rispetto al testo */
+}
+
+.flat-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #000;
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
+}
+
+.about-us-image-minimal {
+    margin-bottom: 2rem;
+}
+
+.about-us-image-minimal img {
+    max-height: 200px;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+
+.flat-title-styled {
+    color: #333;
+    letter-spacing: 3px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    position: relative; 
+    padding-bottom: 15px; 
+    margin-bottom: 2.5rem;
+    display: inline-block; 
+}
+
+
+.flat-title-styled::after {
+    content: ''; 
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; 
+    height: 3px; 
+    background-color: var(--secondary-color); 
 }
