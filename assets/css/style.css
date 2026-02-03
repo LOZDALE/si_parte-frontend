@@ -485,6 +485,33 @@ footer p {
   text-align: center;
 }
 
+/* Intestazione pagina con sfondo colorato (about / contact) */
+.page-header {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.page-header--primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+}
+
+.page-header--secondary {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #2a9d82 100%);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  letter-spacing: 2px;
+}
+
 .about-us-container{
   font-family: "Montserrat" Verdana, Geneva, Tahoma, sans-serif;
     background-color: #fff;
