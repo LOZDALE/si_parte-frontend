@@ -23,6 +23,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -240,6 +244,7 @@ header {
 
 /* Quiz Section */
 .quiz-section {
+  scroll-margin-top: 45vh; 
   padding: 4rem 0 8rem;
   background: transparent;
   min-height: auto;
