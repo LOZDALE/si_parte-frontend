@@ -1,104 +1,158 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Si Parte - Homepage</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- Background rotante con paesaggi -->
-    <div id="backgroundCarousel" class="background-carousel">
-      <div class="background-image" data-location="Montagne Svizzere"></div>
-      <div class="location-info">
-        <strong id="locationName">Montagne Svizzere</strong><br/>
-        <span id="locationWhere">Svizzera</span>
-      </div>
-      <div class="location-tooltip">Montagne Svizzere</div>
-    </div>
 
-    <header>
-      <nav class="navbar">
-        <div class="container">
-          <div class="logo">
-            <a href="index.html" aria-label="Vai alla home">
-              <img src="assets/img/Logo.png" alt="Logo" />
-            </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Si Parte - Homepage</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- Background rotante con paesaggi -->
+  <div id="backgroundCarousel" class="background-carousel">
+    <div class="background-image" data-location="Montagne Svizzere"></div>
+    <div class="location-info">
+      <strong id="locationName">Montagne Svizzere</strong><br />
+      <span id="locationWhere">Svizzera</span>
+    </div>
+    <div class="location-tooltip">Montagne Svizzere</div>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html" aria-label="Vai alla home">
+            <img src="assets/img/Logo.png" alt="Logo" />
+          </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Menu" id="mobileMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#quiz">Quiz</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <img src="assets/img/SiParteBianco.png" alt="Si Parte" />
+      </div>
+    </section>
+
+    <section class="info fade-in">
+      <div class="container">
+        <h1>Il tuo viaggio inizia da qui</h1>
+        <p>SiParte! è la web app che ti aiuta a scegliere il tuo prossimo viaggio in modo semplice e personalizzato.</p>
+        <p>Rispondi a poche domande, scopri la destinazione più adatta a te e vivi una simulazione interattiva del tuo
+          viaggio, dalle attività al budget.</p>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz-section">
+      <div class="container">
+        <button id="startBtn" class="btn-cta btn-cta-primary">Iniziamo il Viaggio</button>
+
+        <div id="quizContainer" class="quiz-container hidden fade-in">
+          <div class="quiz-header">
+            <h2 id="questionTitle">Domanda 1</h2>
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
           </div>
-          <ul class="nav-links">
+
+          <div class="quiz-content">
+            <p id="questionText" class="question-text"></p>
+            <div id="answersContainer" class="answers-container"></div>
+          </div>
+
+          <div class="quiz-footer">
+            <button id="prevBtn" class="btn-quiz btn-quiz-secondary">Indietro</button>
+          </div>
+        </div>
+
+        <!-- Fase 1: Risultato Paese -->
+        <div id="paeseResult" class="paese-container hidden fade-in">
+          <img id="paeseFlag" class="paese-flag" src="" alt="Bandiera" />
+          <h2 id="paeseName"></h2>
+          <div id="paeseInfo">
+            <p id="paeseDescription"></p>
+          </div>
+          <button id="contQuizBtn" class="btn-quiz btn-quiz-primary">Personalizza Città</button>
+        </div>
+
+        <!-- Fase 2: Risultato Finale -->
+        <div id="resultsContainer" class="results-container hidden fade-in">
+          <img id="cityFlag" class="city-flag" src="" alt="Bandiera Città" />
+          <h2 id="destinationName"></h2>
+          <div id="destinationDisplay">
+            <p id="destinationDescription"></p>
+          </div>
+          <button id="restartBtn" class="btn-quiz btn-quiz-primary">Ricomincia</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="info info-bottom">
+      <div class="container">
+        <p>Scegli la tua meta e organizza il tuo budget in pochi click.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="footer-logo" href="index.html" aria-label="Vai alla home">
+            <img src="assets/img/Logo_tagliato.png" alt="Si Parte" />
+          </a>
+          <p class="footer-tagline">
+            Scegli la tua prossima meta in modo semplice e personalizzato.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Link rapidi</h3>
+          <ul>
             <li><a href="#quiz">Quiz</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html">Contatti</a></li>
           </ul>
         </div>
-      </nav>
-    </header>
 
-    <main>
-      <section id="home" class="hero">
-        <div class="container">
-          <img src="assets/img/SiParteBianco.png" alt="Si Parte" />
+        <div class="footer-col">
+          <h3>Contatti</h3>
+          <ul>
+            <li><a href="mailto:SiParte@mail.com">SiParte@mail.com</a></li>
+            <li><a href="https://www.instagram.com/siparte_official?igsh=ejR6dXVlOW1nMzFn" aria-label="Instagram"
+                target="_blank">Instagram</a></li>
+            <li><a href="contact.html">Scrivici</a></li>
+          </ul>
         </div>
-      </section>
-
-      <section class="info">
-        <div class="container">
-          <h1>Il tuo viaggio inizia da qui</h1>
-          <p>SiParte! è la web app che ti aiuta a scegliere il tuo prossimo viaggio in modo semplice e personalizzato.</p>
-          <p>Rispondi a poche domande, scopri la destinazione più adatta a te e vivi una simulazione interattiva del tuo viaggio, dalle attività al budget.</p>
-          <p>Che tu stia cercando relax, avventura o cultura, SiParte! ti accompagna passo dopo passo nella pianificazione della tua esperienza ideale.</p>
-          
-        </div>
-      </section>
-
-      <section id="quiz" class="quiz-section">
-        <div class="container">
-          <button id="startBtn" class="btn btn-primary">Iniziamo</button>
-          <div id="quizContainer" class="quiz-container hidden">
-            <div class="quiz-header">
-              <h2 id="questionTitle">Domanda 1</h2>
-              <div class="progress-bar">
-                <div id="progressFill" class="progress-fill"></div>
-              </div>
-            </div>
-
-            <div class="quiz-content">
-              <p id="questionText" class="question-text"></p>
-              <div id="answersContainer" class="answers-container"></div>
-            </div>
-
-            <div class="quiz-footer">
-              <button id="prevBtn" class="btn btn-secondary">Domanda precedente</button>
-              <button id="nextBtn" class="btn btn-primary">Domanda successiva</button>
-            </div>
-          </div>
-
-          <div id="resultsContainer" class="results-container hidden">
-            <h2>La tua destinazione ideale</h2>
-            <div id="destinationDisplay">
-              <img id="destinationImage" src="" alt="Destinazione" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; margin-bottom: 1rem;" />
-              <h3 id="destinationName"></h3>
-              <p id="destinationDescription"></p>
-            </div>
-            <button id="restartBtn" class="btn btn-primary">Cambiato Idea?</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="info info-bottom">
-        <div class="container">
-          <p>Scegli la tua meta e organizza il tuo budget in pochi click con la nostra intelligenza artificiale.</p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2026 Si Parte! All rights reserved.</p>
       </div>
-    </footer>
 
-    <script src="config.js"></script>
-    <script src="assets/js/app.js"></script>
-  </body>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Si Parte! All rights reserved.</p>
+        <p class="footer-legal">
+          <a href="about.html">Chi siamo</a>
+          <span class="footer-sep">•</span>
+          <a href="contact.html">Supporto</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
 </html>
