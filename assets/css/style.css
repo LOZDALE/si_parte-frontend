@@ -192,15 +192,15 @@ header {
 }
 
 .btn-cta-secondary {
-  background-color: #007bff;
+  background-color: #39d337;
   color: white;
-  border: solid 2px #007bff;
+  border: solid 2px #39d337;
 }
 
 .btn-cta-secondary:hover {
-  background-color: #fff;
-  color: #007bff;
-  border: solid 2px #007bff;
+  background-color: #ffffff;
+  color: #39d337;
+  border: solid 2px #ffffff;
   transform: translateY(-2px);
 }
 
